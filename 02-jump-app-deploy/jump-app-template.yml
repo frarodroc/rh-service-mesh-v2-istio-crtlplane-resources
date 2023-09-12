@@ -14,8 +14,8 @@ objects:
       ports:
         - name: http-8442
           port: 8442
-          protocol: 
-          targetPort: 8442   
+          protocol: TCP
+          targetPort: 8442
       selector:
         app: back-golang
         version: v1
@@ -30,8 +30,8 @@ objects:
       ports:
         - name: http-8080
           port: 8444
-          protocol: 
-          targetPort: 8080   
+          protocol: TCP
+          targetPort: 8080
       selector:
         app: back-python
         version: v1
@@ -46,16 +46,16 @@ objects:
       ports:
         - name: http-8080
           port: 8080
-          protocol: 
+          protocol: TCP
           targetPort: 8080
         - name: http-8443
           port: 8443
-          protocol: 
+          protocol: TCP
           targetPort: 8443
         - name: http-8778
           port: 8778
-          protocol: 
-          targetPort: 8778   
+          protocol: TCP
+          targetPort: 8778
       selector:
         app: back-springboot
         version: v1
@@ -70,8 +70,8 @@ objects:
       ports:
         - name: http-8080
           port: 8080
-          protocol: 
-          targetPort: 3000   
+          protocol: TCP
+          targetPort: 3000
       selector:
         app: front-javascript
         version: v1
@@ -102,7 +102,7 @@ objects:
               - containerPort: 8442
                 protocol: TCP
             resources: {}
-            env:  
+            env:
               - name: APP_REF_NAME
                 value: jump-app
   - apiVersion: apps/v1
@@ -132,7 +132,7 @@ objects:
               - containerPort: 8080
                 protocol: TCP
             resources: {}
-            env:  
+            env:
               - name: APP_REF_NAME
                 value: jump-app
   - apiVersion: apps/v1
@@ -166,7 +166,7 @@ objects:
               - containerPort: 8778
                 protocol: TCP
             resources: {}
-            env:  
+            env:
               - name: APP_REF_NAME
                 value: jump-app
   - apiVersion: apps/v1
@@ -196,7 +196,7 @@ objects:
               - containerPort: 3000
                 protocol: TCP
             resources: {}
-            env:  
+            env:
               - name: APP_REF_NAME
                 value: jump-app
               - name: REACT_APP_BACK
